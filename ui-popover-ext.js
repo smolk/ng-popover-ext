@@ -13,7 +13,7 @@
 (function(angular){
     'use strict';
 
-    var module = angular.module('ngPopoverExt', ['ui.bootstrap']);
+    var module = angular.module('uiPopoverExt', ['ui.bootstrap']);
 
     module
         .config(function($tooltipProvider) {
