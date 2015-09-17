@@ -5,8 +5,8 @@
  * Time: 2:30 PM
  * with Love for Angular & Angular UI
  *
- *
- *
+ * TODO:
+ *  - add custom class to popover element
  */
 
 
@@ -36,7 +36,7 @@
                         });
                     }
 
-                    scope.dismiss = function() {
+                    scope.toggle = scope.dismiss = function() {
                         if (!scope.openned && bUnique) {
                             _removePopovers();
                         }
