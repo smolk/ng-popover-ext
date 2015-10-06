@@ -21,6 +21,11 @@
         })
 
         .directive('popoverToggle', function($timeout) {
+            function trigger(element, evt) {
+                var event = document.createEvent('Event');
+                event.initEvent(evt, true, true);
+                element[0].dispatchEvent(event);
+            }
             return {
                 scope: true,
                 link: function(scope, element, attrs) {
@@ -41,7 +46,7 @@
                             _removePopovers();
                         }
                         $timeout(function() {
-                            element.triggerHandler(scope.openned ? 'close' : 'open');
+                            trigger(element, scope.openned ? 'close' : 'open');
                             scope.openned = !scope.openned;
                         });
                     };
